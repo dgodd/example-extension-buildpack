@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+echo "bin/compile is deprecated, but is provided so that CF will accept the zip file"
+exit 1

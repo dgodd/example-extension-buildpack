@@ -1,0 +1,11 @@
+---
+language: example-extension
+default_versions:
+dependencies: []
+include_files:
+  - README.md
+  - VERSION
+  - bin/compile
+  - bin/supply.exe
+  - manifest.yml
+pre_package: scripts\build.bat
