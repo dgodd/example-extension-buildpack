@@ -1,16 +1,17 @@
-### Buildpack User Documentation
+### Example Extension Buildpack User Documentation
 
 ### Building the Buildpack
-To build this buildpack, run the following command from the buildpack's directory:
-
-1. Install buildpack-packager
-```bash
-go install github.com/cloudfoundry/libbuildpack/packager/buildpack-packager
-```
+To use this buildpack, run the following command from the buildpack's directory:
 
 1. Build the buildpack
 ```bash
-buildpack-packager build -any-stack
+./scripts/build.ps1
+```
+
+1. Use [cfwindowsstager](https://github.com/dgodd/cfwindowsstager/releases) to test the buildpack
+```bash
+.\scripts\build.ps1
+.\cfwindowsstager.exe --app .\fixtures\simple\ --buildpack .\example_extension_buildpack-windows2016-v0.1.2.zip --buildpack https://github.com/dgodd/go-windows-buildpack/releases/download/v0.0.1/go_buildpack-windows2016-v0.0.1.zip
 ```
 
 1. Use in Cloud Foundry
@@ -25,4 +26,4 @@ cf push my_app [-b BUILDPACK_NAME]
 Open an issue on this project
 
 ## Disclaimer
-This buildpack is experimental and not yet intended for production use.
+This buildpack is intended purely for educational use and is not intended for production use.
