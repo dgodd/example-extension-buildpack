@@ -20,4 +20,4 @@ New-Item -ItemType directory -Path "$DepsDir/$DepsIdx/bin"
 Set-Content -Path "$DepsDir/$DepsIdx/bin/mysupplied.ps1" -Value 'Write-Output "Hi from file on path, mysupplied.ps1"'
 
 New-Item -ItemType directory -Path "$DepsDir/$DepsIdx/profile.d"
-Set-Content -Path "$DepsDir/$DepsIdx/profile.d/mysupplied.ps1" -Value '$env:MyTestVariable = "My temporary test variable."'
+Set-Content -Path "$DepsDir/$DepsIdx/profile.d/mysupplied.bat" -Value 'set MyTestVariable="My temporary test variable."'
