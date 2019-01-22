@@ -16,8 +16,8 @@ Write-Output "       DepsDir: $DepsDir"
 Write-Output "       DepsIdx: $DepsIdx"
 Write-Output ""
 
-New-Item -ItemType directory -Path "$DepsDir/$DepsIdx/bin"
+New-Item -ItemType directory -Path "$DepsDir/$DepsIdx/bin" | Out-Null
 Set-Content -Path "$DepsDir/$DepsIdx/bin/mysupplied.bat" -Value 'echo "Hi from file on path, mysupplied.bat"'
 
-New-Item -ItemType directory -Path "$DepsDir/$DepsIdx/profile.d"
+New-Item -ItemType directory -Path "$DepsDir/$DepsIdx/profile.d" | Out-Null
 Set-Content -Path "$DepsDir/$DepsIdx/profile.d/mysupplied.bat" -Value 'set MyTestVariable="My temporary test variable."'
