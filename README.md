@@ -14,6 +14,8 @@ To use this buildpack, run the following command from the buildpack's directory:
 .\cfwindowsstager.exe --app .\fixtures\simple\ --buildpack .\example_extension_buildpack-windows2016-v0.1.2.zip --buildpack https://github.com/dgodd/go-windows-buildpack/releases/download/v0.0.1/go_buildpack-windows2016-v0.0.1.zip
 ```
 
+Then having run the docker container, using `(iwr http://127.0.0.1:8080/ -UseBasicParsing).Content` should show the supplied batch file running, and `(iwr http://127.0.0.1:8080/env -UseBasicParsing).Content` should include the supplied `MyTestVariable` environment variable.
+
 1. Use in Cloud Foundry
 Upload the buildpack to your Cloud Foundry and optionally specify it by name
 
