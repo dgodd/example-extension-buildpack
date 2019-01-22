@@ -15,7 +15,7 @@ func envHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func handler(w http.ResponseWriter, r *http.Request) {
-	out, err := exec.Command("mysupplied.ps1").Output()
+	out, err := exec.Command("mysupplied.bat").Output()
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
 		fmt.Fprintf(w, "ERROR: %s", err)
